@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* ── Orbes animés ─────────────────────────────────────────────────────────── */
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(22px, -28px) scale(1.05); }
+  66%       { transform: translate(-14px, 16px) scale(0.97); }
+}
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-20px, 22px) scale(1.03); }
+  70%       { transform: translate(16px, -16px) scale(0.95); }
+}
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(14px, 22px) scale(1.06); }
+}
+
+.orb-1 { animation: orb-float-1 18s ease-in-out infinite; }
+.orb-2 { animation: orb-float-2 22s ease-in-out infinite; }
+.orb-3 { animation: orb-float-3 26s ease-in-out infinite; }
+
+/* ── Fade-in messages ─────────────────────────────────────────────────────── */
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.msg-in { animation: msg-in 0.22s ease-out forwards; }
+
+/* ── Scrollbar fine violette ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: rgba(8,4,15,0.3); }
+::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.45); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139,92,246,0.8); }
+
+/* ── Markdown ─────────────────────────────────────────────────────────────── */
+.markdown { line-height: 1.65; color: #c4b5d8; }
+.markdown > *:first-child { margin-top: 0; }
+.markdown > *:last-child  { margin-bottom: 0; }
+.markdown p           { margin-bottom: 0.5rem; }
+.markdown p:last-child { margin-bottom: 0; }
+.markdown strong      { font-weight: 700; color: #c4b5fd; }
+.markdown ul          { list-style: disc; margin-left: 1.25rem; margin-bottom: 0.5rem; }
+.markdown ol          { list-style: decimal; margin-left: 1.25rem; margin-bottom: 0.5rem; }
+.markdown li          { margin-bottom: 0.25rem; }
+.markdown a           { color: #8b5cf6; text-decoration: underline; text-underline-offset: 2px; }
+.markdown a:hover     { color: #a78bfa; }
+
+/* ── Audio range ──────────────────────────────────────────────────────────── */
+.audio-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+.audio-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  cursor: pointer;
+  margin-top: -5px;
+  box-shadow: 0 0 0 2px rgba(139,92,246,0.2), 0 0 10px rgba(139,92,246,0.6);
+}
+.audio-range::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  border: none;
+  cursor: pointer;
+}
+.audio-range::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 9999px;
+}
+
+/* ── Glow avatar violet ───────────────────────────────────────────────────── */
+@keyframes avatar-glow {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(139,92,246,0.5), 0 0 14px rgba(139,92,246,0.2); }
+  50%       { box-shadow: 0 0 0 3px rgba(167,139,250,0.7), 0 0 28px rgba(139,92,246,0.45); }
+}
+.avatar-ring { animation: avatar-glow 3.5s ease-in-out infinite; border-radius: 50%; }
